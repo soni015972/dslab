@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int i, ele, n, a[100];
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the element to be inserted ");
+    scanf("%d", &ele);
+
+    
+    int ind = 0;
+    while (ind < n && ele > a[ind]) {
+        ind++;
+    }
+
+    
+    for (i = n; i > ind; i--) {
+        a[i] = a[i - 1];
+    }
+
+    
+    a[ind] = ele;
+
+    
+    for (i = 0; i <= n; i++) {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
