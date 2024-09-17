@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n,a[100],i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    int ele,ind;
+    scanf("%d",&ele);
+    scanf("%d",&ind);
+    if(ind<=n){
+        for(i=n;i>=ind;i--){
+            if(ind==i){
+                a[i]=ele;
+            }
+            else if(ind<n){
+                a[i]=a[i-1];
+            }
+            n++;
+        } for(i=0;i<n;i++){
+            printf("%d",a[i]);
+        }
+    } 
+    else{
+        printf("array size is less than insertion position");
+    }
+    
+    
+
+    return 0;
+}
