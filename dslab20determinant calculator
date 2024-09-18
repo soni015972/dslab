@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int a[10][10];
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    if (n == 2) {
+        int determinant = a[0][0] * a[1][1] - a[0][1] * a[1][0];
+        printf("Determinant: %d\n", determinant);
+    } else if (n == 3) {
+        int determinant =
+           a[0][0] * (a[1][1] * a[2][2] - a[1][2] * a[2][1]) -
+            a[0][1] * (a[1][0] * a[2][2] - a[1][2] * a[2][0]) +
+            a[0][2] * (a[1][0] * a[2][1] - a[1][1] * a[2][0]);
+        printf("Determinant: %d\n", determinant);
+    }
+
+    return 0;
+}
