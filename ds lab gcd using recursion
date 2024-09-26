@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+int hcf(int,int);
+int main() {
+    int a,b,z;
+    printf("enter two no ");
+    scanf("%d%d",&a,&b);
+     z=hcf(a,b);
+    printf("%d",z);
+    return 0;
+}
+int hcf(int a,int b) {
+    if(a>b){
+    if(a%b==0){
+        return b;
+         }
+        
+    else{
+        return (hcf(b,a%b));
+    }
+    }
+    else {
+    if(b%a==0){
+        return a;
+         }
+        
+    else{
+        return (hcf(a,b%a));
+    }
+    }
+}
